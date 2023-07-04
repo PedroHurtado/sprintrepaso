@@ -1,0 +1,21 @@
+1. Gateway
+    1.Ruting
+    2.Autenticacion->Proveedor de identidad
+    3.logger 
+    4.timeout
+    5.Facturacion 
+2. Service Register
+    A->192.168.1.0      60%
+       192.168.1.1      80%
+       192.168.1.2      10%
+3. Service Discovery
+    /healt->cachearlo en la Gateway
+4. Balancedor de carga
+5. Circuit breaker
+    1. Servicio falla
+    open->ko
+    close->ok
+    half open->close|open
+6. Service Mesh
+    28027->public-proxi
+    80->privado

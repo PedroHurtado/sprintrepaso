@@ -1,0 +1,43 @@
+Domain drive designer
+
+Negocio->Y este va a residir en un solo sitio
+
+test->100%
+
+1. Entidad  
+        Debe de ser unica->id es unico
+2. Value Object
+        Es una clase donde un objeto es igual a otro si 
+        todos sus atributos son iguales, de solo lectura
+3. Todos los metodos de la entidad->void
+    Comando
+    addIngredient
+    removeIngredient->no puedo eliminar un ingrediente que no existe
+4. Exception del dominio->400|409
+5. Fronteras del dominio
+6. Eventos
+        Eventos sincronos
+        Eventos asincronos(broker(Kafka,RabitMq))
+7. Agregate root
+
+    Pizza-PizzaIngredients(Pizza)
+    List<Events>
+
+Transacionalidad
+
+    OutbuxPattern
+
+    {
+        id
+        type
+        timestamp
+        user
+        body
+    }
+
+1  ok
+2  error 
+3  break
+
+2   ok    
+3   ok

@@ -1,0 +1,33 @@
+/login
+    user
+    pwd
+
+1. cookie
+        httponly,https set-cookie
+2. token
+        autorizathion: bearer xxxx.xxxx.xxxx(JWT)
+
+        ¿En el cliente donde guardo el token?
+
+        localStorage
+        sessionStorage
+        1. Api sincrona
+        2. Serialización guardar/leer
+        3. Worker(no)
+
+        IndexDb
+
+        1. Api asincrona
+        2. No Serialización
+        3. Worker
+
+https://www.w3.org/TR/CSP3/
+
+3600->1hora
+
+{
+    token:xxxx.xxxx.yyyy(3600)
+    type:bearer,
+    refresh:afdsfalksdfjhask jhfkasfska
+}
+/refresh

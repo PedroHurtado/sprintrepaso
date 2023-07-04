@@ -1,0 +1,9 @@
+dto -> Mono<dto> -1 objeto
+List<dto>->Flux<dto>- n objetos
+
+    stream
+
+1. Controlador
+2. Application
+3. Repositorio   Mono, Flux
+https://docs.spring.io/spring-framework/reference/web/webflux-webclient.html

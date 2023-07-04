@@ -1,0 +1,109 @@
+Controlador
+Application
+Repository
+
+@RestController | @Controller
+class Controller implements IController{
+    public Controller(IService service){
+
+    }
+}
+
+@Service
+class Service implements IService{
+    public Service(IRespository repository){
+
+    }
+}
+
+@Repository
+class Repository implements IRepository{
+
+}
+
+IService -> Service
+IRepository->Repository
+IController->Controller
+
+var IService service = new Service()
+new Controller(new Service(new Repository()))
+
+@Configuration
+class Config{
+    @Bean
+    public IService Service(){
+        return new Service()
+    }
+}
+
+
+
+//Bad
+@RestController
+class Controller{
+    @Autowired
+    private  IRepository repository
+}
+
+¿Que pasa si esa instancia la necesito en el contructor?
+
+Que repositoy == null->null.method//error
+
+¿Que pasa si en cualquier metodo del Controller haces esto repository = null
+
+//Good
+
+//Bad
+@RestController
+class Controller{    
+    private final IRepository repository    
+    public Controller(final IRepository repository){
+        this.repository = repository;
+    }
+}
+
+@RestController
+class Controller extends ControllerBase{    
+    protected final IRepository repository    
+    public Controller(final IRepository repository){
+        super(repository)
+    }
+}
+
+class ControllerBase {
+    @Autowired
+    private Repository repository
+    protected getRepository(){
+        return repository;
+    }
+}
+
+class Controller extends ControllerBase(){
+    Controller(){
+        this.getRepository() // null
+    }
+}
+
+//Ambito
+
+Singleton->sin estado
+
+1. props->performace->una cargado
+2. cont->Carga inicial
+
+Lazy
+
+1. props->Ahorra recursos en la carga inicial
+2. cont->Si se produce un error no te vas a enterar hasta que 
+se necesite la depencencia
+
+@Component
+@Service
+@Repository
+@Configuration->@Bean
+@RestController
+@Controller
+
+@Order
+
+<?,?>

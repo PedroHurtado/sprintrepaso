@@ -1,0 +1,27 @@
+Logger
+Exception
+
+POA
+
+@Transactional
+@Logger
+public void Save(command){
+    var entidad = new Entidad();
+    repository.save(entidad);
+}
+
+method(){
+    try{
+        //open connection
+        //begin transaction
+        Save()
+    }
+    cath{
+        //rollback transaction
+    }
+    finally{
+        //close connection
+    }
+}
+
+

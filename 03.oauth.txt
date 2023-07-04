@@ -1,0 +1,47 @@
+1. Proveedor de identidad(IdP)
+    Google,facebook,linkedin,twiter,github
+    El usuario no necisita autenticarse en tu web con user,password
+
+1.1 Crear en el IdP-Application
+    Application name
+    url
+    callback-url
+
+    client-id
+    client-secret
+1.2 <form method="post" action="/login/github">
+        <button>autenticar con github</button>
+    <form>
+1.3 GET https://github.com/login/oauth/authorize(redirect)
+
+        client_id=3432434234
+        redirect_uri
+        scope
+1.4
+        1.4.1 No está autenticado en github
+        1.4.2 Le aparecerá la ventana de aceptar los permisos
+1.5. callback-url   
+        code
+1.6- Server-Server  POST https://github.com/login/oauth/access_token
+        client-id
+        client-secret
+        code
+        scope
+        callback-url
+1.7 devolución de token
+        Accept: application/json
+        {
+            "access_token":"gho_16C7e42F292c6912E7710c838347Ae178B4a",
+            "scope":"repo,gist",
+            "token_type":"bearer"
+        }
+1.8 llamar con el acces_token /github/user
+
+      {
+        firstName,
+        lastName,
+        email,
+        avatar
+      }
+1.9 Guardar en bb.dd
+    emitir un token propio de session

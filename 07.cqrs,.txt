@@ -1,0 +1,30 @@
+Command Query Resposibility Segregation
+
+add,update,remove, select
+
+1. Actualizacion(add,update,remove)
+2. Select
+
+pizzas (bb.dd sql)
+{
+    id
+    name
+    description,
+    url
+    ingredients:[id,id,id,id]    
+}
+ingredients(bb.sql)
+{
+    id
+    name
+    price
+}
+
+//no actualizado en tiempo real(elasticeSearch) (nosql)
+{
+    id
+    name
+    price
+    description
+    ingredients:[{id,name}...{id,name}]
+}

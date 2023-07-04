@@ -1,0 +1,25 @@
+Controlador
+        servicio
+Application
+        Validacion
+        Logger
+        Transaccionalidad
+Infraestructura
+        BB.DD
+
+
+1. rquitectura Hexagonal
+
+        Dominio
+        Application
+
+        Puerto primario(rest)
+        Puesto secundario(bb.ddd)
+
+2. Vertical Slice
+
+        Mediatr
+        Pipeliner
+
+        Decorator
+        Mediator

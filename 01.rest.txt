@@ -1,0 +1,79 @@
+pizza={
+    id
+    name,
+    description,
+    url,
+    price, sum(ingredientes) * 1.20
+    ingredients:[{id,name,price}]
+}
+
+crear,update,remove,get
+1. http://localhost:8080/
+    1.1 pluzarilar la url /pizzas
+    1.2 la url no debe de exponer acciones /pizzas/create
+    1.3 la url no de debe de exponer formatos /pizzas.json
+
+2. Versionado
+     v1/pizzas
+
+crear
+
+path        verbo       request         response            ok          error
+
+/pizzas     POST        {}              {id,price,ing}      201         400
+                                                                        401
+                                                                        403|404
+                                                                        500            
+                                                                    
+modificar
+
+path            verbo       request         response                  ok          error
+
+/pizzas/{id}    PUT         {}              {id,price,ing}|empty      204         400
+                PATCH                                                 200         401
+                                                                                  403|404
+                                                                                  500            
+                                                                                  404
+
+remove
+
+path            verbo       request         response                  ok          error
+
+/pizzas/{id}    DELETE                                                204         400
+                                                                                  401
+                                                                                  403|404
+                                                                                  500            
+                                                                                  404
+
+remove
+
+path            verbo       request         response                  ok          error
+
+1. sola entidad
+/pizzas/{id}    GET                         {}                        200         400
+                                                                                  401
+                                                                                  403|404
+                                                                                  500            
+                                                                                  404
+
+1. un array de entidades
+/pizzas        GET                         [{}]                       200         400
+                                                                                  401
+                                                                                  403|404
+?name=a&page=1&size=25
+
+Si yo en una pantalla quiero 
+
+id,name,price,url
+id,name,price,url,ingredientes...
+
+https://www.odata.org/
+https://olingo.apache.org/
+https://graphql.org/
+
+accept:'application/json' 
+
+content-type:'application/json'
+
+
+

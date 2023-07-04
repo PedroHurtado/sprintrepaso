@@ -1,0 +1,8 @@
+Rest
+
+WebClient->A->B
+https://grpc.io/
+
+Eventos de integracion->Broker
+
+Publicador->Suscriptor

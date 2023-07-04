@@ -1,0 +1,12 @@
+1. Reactive->netty
+2. Spring Cloud Function
+        Web
+        Stream
+
+        Cloud Google
+        Azure
+        AWS
+Electron        
+        3. Chromium(Frontend)
+                fetch()->Angular,Reat,Vue,Svelte
+        4. Nodejs(Bakend)
